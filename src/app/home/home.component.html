@@ -1,8 +1,26 @@
 <div class="container">
-<h4 class="text-center">Search movies...</h4>
+<div class="row">
 <form>
+<BR>
+<div class="col-md-12">
   <div class="form-group">
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" placeholder="Hi ! what movie would you want me to search for you today... ?" #moviename (input)=search(moviename.value) autofocus>
   </div>
+</div>
  </form>
+</div>
+</div>
+<br>
+<div class="container">
+ <div class="row">
+ <div *ngIf="movies">
+ 	<div *ngFor="let movie of movies"> 
+ 		<div class="col-md-3">
+ 			<img src="{{movie.Poster}}" class="img-responsive">
+ 			<h4>{{movie.Title}} ({{movie.Year}})</h4>
+ 			<a class="btn btn-default" role="button"[routerLink]="['/movie', movie.imdbID]">View more</a>
+ 		</div>
+ 	</div>
+ </div>
+ </div>
 </div>
