@@ -1,10 +1,24 @@
 <div class="container">
  <div class="row">
  	<div *ngIf="moviesDetails"> 
+ 	    <div class="col-md-1"> 
+ 	    <button type="button" class="btn btn-default" (click)="backHome()"> <span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+ 	   
+ 	    </div>
  		<div class="col-md-3">
- <!-- 			<img src="{{movie.Poster}}" class="img-responsive"> -->
- 			<h4>{{id}}</h4>
- 			{{moviesDetails.Year}}
+ 			<img src="{{moviesDetails.Poster}}" class="img-responsive">
+ 			<h4><strong><em>{{moviesDetails.Title}}</em></strong></h4>
+ 			<h6>IMDB Rating : <strong>{{moviesDetails.imdbRating}}</strong> | Year : <strong>{{moviesDetails.Year}}</strong></h6>
+ 		</div>
+
+ 		<div class="col-md-7">
+ 		    <blockquote><em>"{{moviesDetails.Plot}}"</em></blockquote>
+
+            <div class="well well-sm"><strong>Genre - {{moviesDetails.Genre}}</strong></div>
+            <div class="well well-sm"><strong>Actors - {{moviesDetails.Actors}}</strong></div>
+            <div class="well well-sm"><strong>Awards : {{moviesDetails.Awards}}</strong></div>
+            <div class="well well-sm"><strong>Production : {{moviesDetails.Production}}</strong></div>
+ 	
  		</div>
  	</div>
  </div>

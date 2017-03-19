@@ -17,7 +17,7 @@ export class MovieService {
   }
 
   movieDetail(id){
-  	return this._http.get(`http://www.omdbapi.com/?i=${id}`)
+  	return this._http.get(`http://www.omdbapi.com/?i=${id}&plot=full`)
   	.map((data: Response) => data.json())
   	.catch(this.handleErr)
   }

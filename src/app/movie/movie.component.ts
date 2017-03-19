@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '.././movie.service';
 
 
@@ -10,11 +10,15 @@ import { MovieService } from '.././movie.service';
 })
 export class MovieComponent implements OnInit {
 
-  constructor(private _movieService: MovieService, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _movieService: MovieService, private _activatedRoute: ActivatedRoute, private _router: Router) { }
 
     moviesDetails: any;
     errorMessage: string;
     id: any;
+  
+  backHome(){
+     this._router.navigate(['/']);
+  }
 
   ngOnInit() {
   	this.id = this._activatedRoute.snapshot.params['id'];
