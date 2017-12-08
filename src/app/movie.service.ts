@@ -11,13 +11,13 @@ export class MovieService {
   constructor(private _http: Http) { }
 
   get(name){
-  	return this._http.get(`http://www.omdbapi.com/?s=${name}`)
+  	return this._http.get(`https://www.omdbapi.com/?s=${name}&apikey=c6d31a02`)
   	.map((data: Response) => data.json())
   	.catch(this.handleErr)
   }
 
   movieDetail(id){
-  	return this._http.get(`http://www.omdbapi.com/?i=${id}&plot=full`)
+  	return this._http.get(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=c6d31a02`)
   	.map((data: Response) => data.json())
   	.catch(this.handleErr)
   }
